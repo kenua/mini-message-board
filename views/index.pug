@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  section
+    ul
+      each message in messages 
+        li
+          h2 User: #{message.user} / Added: #{message.added}
+          p= message.text

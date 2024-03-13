@@ -1,0 +1,12 @@
+extend layout
+
+block content
+  form(method='POST' action='/new')
+    div: input(type='text' placeholder='user' name='username')
+    div: textarea(
+            name='message', 
+            cols='0', 
+            rows='10' 
+            placeholder='Your message'
+        )
+    div: input(type='submit' value='Submit message')
