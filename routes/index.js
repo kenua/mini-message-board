@@ -21,4 +21,22 @@ router.get('/', function(req, res, next) {
   res.render('index', locals);
 });
 
+/* GET new message page. */
+router.get('/new', function(req, res, next) {
+  res.render('form', { title: 'Message Board - New message'});
+});
+
+/* Save message. */
+router.post('/new', function(req, res, next) {
+  let { username, message } = req.body;
+  let newMessage = {
+    user: username,
+    text: message,
+    added: new Date(),
+  };
+
+  messages.push(newMessage);
+  res.redirect('/');
+});
+
 module.exports = router;
